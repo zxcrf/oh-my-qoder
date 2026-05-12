@@ -4,3 +4,4 @@ bridge/hooks/
 bridge/cli.cjs
 *.tsbuildinfo
 .DS_Store
+.qoder/
