@@ -1,0 +1,109 @@
+{
+  "description": "oh-my-qoder orchestration hooks — multi-agent coordination and persistent execution",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/keyword-detector.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/session-start.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/pre-tool-enforcer.mjs\"",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/post-tool-verifier.mjs\"",
+            "timeout": 3
+          },
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/project-memory.mjs\" posttool",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/context-guard.mjs\"",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/persistent-mode.mjs\"",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/code-simplifier.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/pre-compact.mjs\"",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/project-memory.mjs\" precompact",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/session-end.mjs\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

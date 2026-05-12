@@ -1,0 +1,6 @@
+node_modules/
+dist/
+bridge/hooks/
+bridge/cli.cjs
+*.tsbuildinfo
+.DS_Store

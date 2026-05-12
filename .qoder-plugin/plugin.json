@@ -1,0 +1,20 @@
+{
+  "name": "oh-my-qoder",
+  "version": "1.0.0",
+  "description": "Multi-agent orchestration system for Qoder CLI — specialized agents, persistent execution modes, and hook-based enhancements",
+  "author": {
+    "name": "oh-my-qoder contributors"
+  },
+  "license": "MIT",
+  "skills": [
+    "./skills/ralph/",
+    "./skills/autopilot/",
+    "./skills/ultrawork/",
+    "./skills/team/",
+    "./skills/plan/",
+    "./skills/cancel/",
+    "./skills/deep-interview/",
+    "./skills/setup/"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

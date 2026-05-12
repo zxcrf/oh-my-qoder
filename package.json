@@ -1,0 +1,35 @@
+{
+  "name": "oh-my-qoder",
+  "version": "1.0.0",
+  "description": "Multi-agent orchestration system for Qoder CLI",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "oh-my-qoder": "./bridge/cli.cjs",
+    "omq": "./bridge/cli.cjs"
+  },
+  "scripts": {
+    "build": "tsc && node scripts/build-hooks.mjs && node scripts/build-cli.mjs",
+    "build:hooks": "node scripts/build-hooks.mjs",
+    "build:cli": "node scripts/build-cli.mjs",
+    "reinstall": "npm run build && qodercli plugins uninstall oh-my-qoder && qodercli plugins install .",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test": "vitest"
+  },
+  "keywords": ["qoder", "cli", "multi-agent", "orchestration", "ai"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "@types/node": "^20.14.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "zod": "^3.23.0"
+  }
+}
