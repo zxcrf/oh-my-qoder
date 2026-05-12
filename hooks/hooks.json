@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/keyword-detector.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/keyword-detector.mjs\"",
             "timeout": 5
           }
         ]
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/session-start.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/session-start.mjs\"",
             "timeout": 5
           }
         ]
@@ -31,7 +31,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/pre-tool-enforcer.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/pre-tool-enforcer.mjs\"",
             "timeout": 3
           }
         ]
@@ -43,12 +43,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/post-tool-verifier.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/post-tool-verifier.mjs\"",
             "timeout": 3
           },
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/project-memory.mjs\" posttool",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/project-memory.mjs\" posttool",
             "timeout": 3
           }
         ]
@@ -60,17 +60,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/context-guard.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/context-guard.mjs\"",
             "timeout": 5
           },
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/persistent-mode.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/persistent-mode.mjs\"",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/code-simplifier.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/code-simplifier.mjs\"",
             "timeout": 5
           }
         ]
@@ -82,12 +82,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/pre-compact.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/pre-compact.mjs\"",
             "timeout": 10
           },
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/project-memory.mjs\" precompact",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/project-memory.mjs\" precompact",
             "timeout": 5
           }
         ]
@@ -99,7 +99,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"$QODER_PLUGIN_ROOT/scripts/run.cjs\" \"$QODER_PLUGIN_ROOT/bridge/hooks/session-end.mjs\"",
+            "command": "node \"$QODER_PLUGIN_ROOT/hooks/run.cjs\" \"$QODER_PLUGIN_ROOT/hooks/scripts/session-end.mjs\"",
             "timeout": 30
           }
         ]

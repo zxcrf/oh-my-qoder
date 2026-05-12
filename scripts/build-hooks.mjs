@@ -28,9 +28,9 @@ if (hookFiles.length === 0) {
 await esbuild.build({
   ...sharedConfig,
   entryPoints: hookFiles,
-  outdir: 'bridge/hooks',
+  outdir: 'hooks/scripts',
   outExtension: { '.js': '.mjs' },
   splitting: false,
 });
 
-console.log(`Built ${hookFiles.length} hook scripts → bridge/hooks/`);
+console.log(`Built ${hookFiles.length} hook scripts → hooks/scripts/`);
